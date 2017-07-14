@@ -33,7 +33,7 @@ int main(void)
     {
     	UART0_puts("\n\rPresione una tecla para capturar.");
     	UART0_getchar();
-    	while(miliseg <= 8000 )
+    	while(miliseg < 8000 )
     	{
     		dato = ADC_read();
     		if( verify && ADC_result(dato) )
@@ -57,6 +57,7 @@ void ADC_init( void )
 	ADCSRB = 0;						
 	DIDR0 = 0;						//DIGITAL input dis
 }
+
 uint8_t ADC_read( void )
 {
 	ADCSRA |= (1<<ADSC);
