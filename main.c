@@ -15,4 +15,9 @@ int main(void)
     {
     }
 }
+void UART0_init( void )
+{
+	UBRR0 = 103;
+	
+}
 
